@@ -1,0 +1,152 @@
+<!-- HEADER -->
+      <header class="trd-header">
+          <!-- Topbar -->
+          <div class="trd-header-topbar">
+              <div class="container">
+                  <div class="row">
+                      <!-- contact info -->
+                      <div class="trd-contact-infos">
+                          <ul>
+                              <li class="trd-header-info-phn">0582 856 310</li>
+                              <li class="trd-header-info-location">Lake Avenue, California</li>
+                              <li class="trd-header-info-lang">
+                                  <select class="trd-multilang-opt">
+                                      <option value="Eng">English</option>
+                                      <option value="Spn">Spanish</option>
+                                      <option value="Ger">German</option>
+                                      <option value="Rus">Russian</option>
+                                  </select>
+                              </li>
+                          </ul>
+                      </div>
+                      <!-- End -->
+
+                      <!-- Social Links -->
+                      <div class="trd-social-links">
+                          <ul>
+                              <li class="trd-fb-icon">
+                                  <a href="#">
+                                      <i class="fa fa-facebook"></i>
+                                  </a>
+                              </li>
+                              <li class="trd-twitter-icon">
+                                  <a href="#">
+                                      <i class="fa fa-twitter"></i>
+                                  </a>
+                              </li>
+                              <li class="trd-behance-icon">
+                                  <a href="#">
+                                      <i class="fa fa-behance"></i>
+                                  </a>
+                              </li>
+                              <li class="trd-dribbble-icon">
+                                  <a href="#">
+                                      <i class="fa fa-dribbble"></i>
+                                  </a>
+                              </li>
+                              <li class="trd-vimeo-icon">
+                                  <a href="#">
+                                      <i class="fa fa-vimeo"></i>
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                      <!-- End -->
+                  </div>
+              </div>
+          </div>
+          <!-- End -->
+
+          <!-- Bottombar -->
+          <div class="trd-header-bottombar">
+              <!-- Navigation Menu start-->
+              <nav class="navbar trd-main-menu trd-logo-middle" role="navigation">
+                <div class="container">
+                  <div class="row">
+                    <!-- Navbar Toggle -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+
+                        <!-- Logo -->
+                        <%= link_to root_path, class: "navbar-brand visible-xs"  do %>
+                          <%= image_tag "logo-header-4.png", class: "logo" %>
+                          <% end %>
+                    </div>
+                    <!-- Navbar Toggle End -->
+
+                      <!-- navbar-collapse start-->
+                      <div id="nav-menu" class="navbar-collapse trd-menu-wrapper collapse" role="navigation">
+                          <!-- Menu -->
+                          <ul class="nav navbar-nav trd-menus">
+                              <li class="trd-menu-left">
+                                  <ul>
+                                      <li class="active">
+                                          <a href="homepage-4.html">Home</a>
+
+                                      </li>
+                                      <li>
+                                        <%= link_to "Abouts", page_path("about") %>
+                                      </li>
+
+                                  </ul>
+                              </li>
+
+                              <li class="trade-logo-menu hidden-xs">
+
+                                  <%= link_to root_path, class: "navbar-brand"  do %>
+                                    <%= image_tag "logo-header-4.png", class: "logo" %>
+                                    <% end %>
+                              </li>
+
+                              <% if user_signed_in?  %>
+
+                                                            <li class="trd-menu-right">
+                                                                <ul>
+                                                                    <li>
+                                                                      <%= link_to "Account", balances_path %>
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <% else %>
+
+                              <li class="trd-menu-right">
+                                  <ul>
+                                      <li>
+                                        <%= link_to "Log In / Sign Up", new_user_session_path %>
+
+                                      </li>
+                                      <li>
+                                          <%= link_to "Contact", page_path("contact") %>
+                                      </li>
+                                  </ul>
+                              </li>
+                               <% end %>
+                          </ul>
+                          <!-- End -->
+                      </div>
+                      <!-- navbar-collapse end-->
+
+                      <!-- Search -->
+                      <div class="trd-search-wrapper">
+                          <a href="#" class="trd-search-icon">
+                              <i class="fa fa-search"></i>
+                          </a>
+                      </div>
+                      <!-- End -->
+                  </div>
+                </div>
+              </nav>
+              <!-- Navigation Menu end-->
+          </div>
+          <!-- End -->
+      </header>
+      <!-- HEADER END -->
