@@ -44,6 +44,9 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
+  config.assets.digest = true
+
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.svg *.eot *.ttf)
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.

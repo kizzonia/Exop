@@ -4,7 +4,16 @@ ActiveAdmin.register Balance do
 #
 # permit_params :list, :of, :attributes, :on, :model
 #
-filter :user, as: :string
+filter :user, :collection => proc {(User.all).map{|u| [u.email, u.id]}}
+form do |f|
+
+    f.inputs do
+ f.input :user_id, :label => 'Users', :as => :select, :collection => User.all.map{|u| ["#{u.email}, #{u.name}", u.id]}
+      f.input :balance
+    end
+    f.submit :submit
+  end
+
 
 permit_params :balance, :user_id
 # or
