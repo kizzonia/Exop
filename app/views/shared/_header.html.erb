@@ -86,13 +86,24 @@
                               <li class="trd-menu-left">
                                   <ul>
                                       <li class="active">
-                                          <a href="homepage-4.html">Home</a>
+                                          <%= link_to "Home",  root_path %>
+
+                                      </li>
+
+                                          <% if user_signed_in?  %>
+                                      <li>
+                                        <%= link_to "Account", balances_path %>
 
                                       </li>
                                       <li>
+                                        <%= link_to "Account history", balance_path('history') %>
+
+                                      </li>
+                                      <% else %>
+                                      <li>
                                         <%= link_to "Abouts", page_path("about") %>
                                       </li>
-
+                                      <% end %>
                                   </ul>
                               </li>
 
@@ -107,10 +118,16 @@
 
                                                             <li class="trd-menu-right">
                                                                 <ul>
+
                                                                     <li>
-                                                                      <%= link_to "Account", balances_path %>
+                                                                      <%= link_to "Withdraw", balance_path('withdraw') %>
 
                                                                     </li>
+                                                                    <li>
+                                                                      <%= link_to "Deposit", balance_path('deposit') %>
+
+                                                                    </li>
+
                                                                     <li>
                                                                         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                                                                     </li>
