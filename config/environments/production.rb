@@ -84,6 +84,15 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 config.action_mailer.default_url_options = { host: 'http://www.exop.herokuapp.com/' }
+ActionMailer::Base.smtp_settings = {
+  :user_name            => ENV['SENDGRID_USERNAME'],
+  :password             => ENV['SENDGRID_PASSWORD'],
+  :address              => "smtp.sendgrid.net",
+  :port                 => 587,
+  :enable_starttls_auto => true,
+  :authentication       => :plain,
+  :domain               => "www.exop.herokuapp.com"
+}
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
