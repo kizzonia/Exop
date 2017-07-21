@@ -85,13 +85,13 @@ Rails.application.configure do
   end
 config.action_mailer.default_url_options = { host: 'http://www.exop.herokuapp.com/' }
 ActionMailer::Base.smtp_settings = {
-  :user_name            => ENV['SENDGRID_USERNAME'],
-  :password             => ENV['SENDGRID_PASSWORD'],
-  :address              => "smtp.sendgrid.net",
-  :port                 => 587,
-  :enable_starttls_auto => true,
-  :authentication       => :plain,
-  :domain               => "heroku.com"
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :domain         => 'heroku.com',
+  :enable_starttls_auto => true
 }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
