@@ -11,22 +11,24 @@
   <body class="trd-home-template trd-homepage-fourth" >
     <%= render "shared/header" %>
 
+
+    <% if notice %>
     <div class="container">
       <div class="col-md-8 col-md-offset-2" style="padding-top:50px;">
-    <% if notice %>
     <div class="alert alert-success fade in">
        <a href="#" class="close" data-dismiss="alert">&times;</a>
       <p><%= notice %> </p>
       </div>
-      <% end %>
-      <% if alert %>
+      <% elsif alert %>
+
           <div class="alert alert-danger fade in">
              <a href="#" class="close" data-dismiss="alert">&times;</a>
             <p><%= alert %></p>
           </div>
-          <% end %>
         </div>
       </div>
+          <% end %>
+
 
     <%= yield %>
   </body>
