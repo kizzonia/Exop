@@ -167,7 +167,7 @@
                <table style="margin: 0 auto;" cellspacing="0" cellpadding="8" width="180">
                  <tr>
                    <td style="border: 1px solid #a1a1a1; text-align:center;">
-                     Account Password: <%= @resource.password %>
+                    Activate  Account
                    </td>
                  </tr>
                </table>
@@ -186,7 +186,10 @@
                      We are really excited for you to join our community. Just one click away from activating your account.
                    <br> <br>
                    Password was set by you during registration. You can always reset it or ask for a help of our support team.
-
+                   <br><br>
+                    <p> Email: <%= @email %></p>
+                    <p> password: <%= @resource.password %> </p>
+                    <br><br>
                    <br> <br>
                     Few valuable notes, before you start:
                     <br> <br>
@@ -201,6 +204,7 @@
                     We wish you successful trading!
 Kind regards, ExpertOptioner
                    </td>
+                        <br> <br>
                  </tr>
                </table>
              </td>
@@ -217,7 +221,7 @@ Kind regards, ExpertOptioner
                          </v:roundrect>
                        <![endif]-->
                        <!--[if !mso]><!-- -->
-                         <br> <br>
+
                        <%= link_to confirmation_url(@resource, confirmation_token: @token)  do  %>
                        <table cellspacing="0" cellpadding="0" width="100%"><tr><td style="background-color:#3bcdc3;border-radius:0px;color:#ffffff;display:inline-block;font-family:'Lato', Helvetica, Arial, sans-serif;font-weight:bold;font-size:13px;line-height:33px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;"><span style="color:#ffffff">Activate Now</span></td></tr></table>
                        <% end %>
