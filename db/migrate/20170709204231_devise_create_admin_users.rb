@@ -39,9 +39,5 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration[5.0]
     # add_index :admin_users, :confirmation_token,   unique: true
     # add_index :admin_users, :unlock_token,         unique: true
   end
-  AdminUser.create! do |r|
-  r.email      = 'Admin@exop.com'
-  r.password   = 'kizzonia1'
-  r.superadmin = true
-end
+
 end
