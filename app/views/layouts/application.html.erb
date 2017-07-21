@@ -10,6 +10,17 @@
 
   <body class="trd-home-template trd-homepage-fourth" >
     <%= render "shared/header" %>
+    <% if notice %>
+    <div class="alert alert-success fade in">
+      <p><%= notice %> </p>
+      </div>
+      <% end %>
+      <% if alert %>
+          <div class="alert alert-danger fade in">
+            <p><%= alert %></p>
+          </div>
+          <% end %>
+
     <%= yield %>
   </body>
 </html>
