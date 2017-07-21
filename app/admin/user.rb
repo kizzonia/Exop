@@ -6,7 +6,7 @@ ActiveAdmin.register User do
 #
 # or
 #
-filter :user, :collection => proc {(User.all).map{|u| [u.email, u.id]}}
+
 
 permit_params :balance, :user_id
 # permit_params do
