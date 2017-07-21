@@ -8,7 +8,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :enable_starttls_auto => true,
   :authentication       => :plain,
-  :domain               => "www.exop.herokuapp.com"
+  :domain               => "heroku.com"
 }
 
 end

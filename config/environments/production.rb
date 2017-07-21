@@ -91,7 +91,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :enable_starttls_auto => true,
   :authentication       => :plain,
-  :domain               => "www.exop.herokuapp.com"
+  :domain               => "heroku.com"
 }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
