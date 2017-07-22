@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
 
-  resources :balances do
-    resources :withdraw, only: [:new, :create]
-    resources :deposit, only: [:new, :create]
-  end
+  resources :balances
+
+
+namespace :balance do
+  resources :withdraw, only: [:new, :create]
+  resources :deposit, only: [:new, :create]
+end
 
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
