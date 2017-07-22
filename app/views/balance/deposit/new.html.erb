@@ -18,7 +18,7 @@
                 <div class="trd-contact-form-wrapper col-md-8 col-md-offset-2 col-sm-6 col-xs-12">
                     <h1 class="trd-section-tittle">Deposit <span class="trd-highlight-text"> Request Form</span></h1>
 
-                    <%= simple_form_for @deposit do |f| %>
+                    <%= simple_form_for ([@deposit, :balance], :url => balance_deposit_path) do |f| %>
                       <%= f.input :name, id: 'trd-name' %>
                       <%= f.input :email, id: 'trd-email', required: true %>
                       <%= f.input :amount %>
