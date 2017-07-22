@@ -3,7 +3,7 @@ class BalancesController < InheritedResources::Base
   before_action :find_Balance, only: [  :edit, :update, :destroy]
   before_action :authenticate_user!
   def index
-    @balances = Balance.where(user_id: current_user)
+    @balances = Balance.where(user_id: current_user).order_by('created_at DESC')
 
   end
   def show
