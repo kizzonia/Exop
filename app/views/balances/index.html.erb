@@ -27,7 +27,7 @@
                       <div class="trd-sidebar-widget trd-pagelink-widget">
                           <ul>
                                 <li> Account Updates/History  </li>
-                                <% @balances.take(1).each do |balance| %>
+                                <% @balances.take(1).each.order('created_at DESC') do |balance| %>
                               <li>
                              balance   $  <%= balance.balance %>
                               </li>
