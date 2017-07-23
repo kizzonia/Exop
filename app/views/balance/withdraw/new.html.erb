@@ -18,7 +18,7 @@
                 <div class="trd-contact-form-wrapper col-md-8 col-md-offset-2 col-sm-6 col-xs-12">
                     <h1 class="trd-section-tittle">Withdrawal <span class="trd-highlight-text">Form</span></h1>
 
-                    <%= simple_form_for([:balance, @withdraw], :url => balance_withdraw_index_path) do |f| %>
+                    <%= simple_form_for([:balance, @withdraw], :url => new_balance_withdraw_path) do |f| %>
       <%= f.error_notification %>
 
                       <%= f.input :name, id: 'trd-name' %>
