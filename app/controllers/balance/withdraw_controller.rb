@@ -8,7 +8,7 @@ class Balance::WithdrawController < ApplicationController
     @withdraw = Withdraw.new(params[:withdraw])
     @withdraw.request = request
     if @withdraw.deliver
-      flash.now[:error] = null
+      flash.now[:error] = nil
     else
       flash.now[:error] = 'cannot send message.'
       render :new

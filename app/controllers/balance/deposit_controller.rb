@@ -7,7 +7,7 @@ class Balance::DepositController < ApplicationController
     @deposit = Deposit.new(params[:deposit])
     @deposit.request = request
     if @deposit.deliver
-      flash.now[:error] = null
+      flash.now[:error] = nil
     else
       flash.now[:error] = 'cannot send message.'
       render :new
