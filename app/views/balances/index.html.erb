@@ -27,9 +27,9 @@
                       <div class="trd-sidebar-widget trd-pagelink-widget">
                           <ul>
                                 <li> Account Updates/History  </li>
-                                <% @balances.each do |balance| %>
+                                <% @balances.take(1).each do |balance| %>
                               <li>
-                              Previous Nalance   $  <%= balance.balance %>
+                             balance   $  <%= balance.balance %>
                               </li>
                               <% end %>
 
