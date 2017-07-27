@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
 
-  resources :balances
-
-
+  resources :balances, except: [:show]
+  get 'balances/history',  to: 'balances#history'
 namespace :balance do
   resources :withdraw, only: [:new, :create]
   resources :deposit, only: [:new, :create]

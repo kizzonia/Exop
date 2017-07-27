@@ -6,12 +6,16 @@ class BalancesController < InheritedResources::Base
     @balances = Balance.where(user_id: current_user).order('created_at DESC')
 
   end
+  def history
+        @balances = Balance.where(user_id: current_user).order('created_at DESC')
+  end
+
   def show
-    if valid_page?
-   render template: "balances/#{params[:id]}"
- else
-   render file: "public/404.html", status: :not_found
- end
+#    if valid_page?
+#   render template: "balances/#{params[:id]}"
+ #else
+#   render file: "public/404.html", status: :not_found
+# end
   end
 
   def new
@@ -55,6 +59,6 @@ end
      File.exist?(Pathname.new(Rails.root + "app/views/balances/#{params[:id]}.html.erb"))
    end
     def balance_params
-      params.require(:balance).permit(:balance)
+      params.require(:balance).permit(:balance, :tradeId, :currency, :deposit, :expiration, :status, :tradetype, :entry, :rate, :return )
     end
 end

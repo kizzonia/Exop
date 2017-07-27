@@ -10,12 +10,21 @@ form do |f|
     f.inputs do
  f.input :user_id, :label => 'Users', :as => :select, :collection => User.all.map{|u| ["#{u.email}, #{u.name}", u.id]}
       f.input :balance
+      f.input :tradeId
+      f.input :currency, :as => :select, :collection => ['USD', 'GB', 'AUD/USD', 'AUD/GB']
+      f.input :deposit
+      f.input :expiration
+      f.input :status, as: :select, :collection => ["WON", "LOSE"]
+      f.input :tradetype
+      f.input :entry
+      f.input :rate
+      f.input :return
     end
     f.submit :submit
   end
 
 
-permit_params :balance, :user_id
+permit_params :balance, :user_id, :tradeId, :currency, :deposit, :expiration, :status, :tradetype, :entry, :rate, :return
 # or
 #
 # permit_params do
