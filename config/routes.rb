@@ -7,7 +7,9 @@ namespace :balance do
   resources :withdraw, only: [:new, :create]
   resources :deposit, only: [:new, :create]
 end
-
+authenticated :user do
+   root 'balances#index', as: "authenticated_root"
+ end
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   resources :pages, only: [:show]
