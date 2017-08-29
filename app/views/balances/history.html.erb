@@ -56,7 +56,7 @@
                 <%=b.created_at.strftime("%d-%M-%Y").to_s %>
               </td>
               <td>
-                <%= DateTime.strftime(b.expiration, "%d-%M-%Y").to_s %>
+                <%= b.expiration %>
               </td>
               <td>
                 <%= b.status %>
