@@ -53,10 +53,10 @@
                 <%=b.rate %>
               </td>
               <td>
-                <%=b.created_at.strftime("%d-%b-%Y").to_s %>
+                <%=b.created_at.strftime("%d-%M-%Y").to_s %>
               </td>
               <td>
-                <%= DateTime.strptime(b.expiration, "%d-%b-%Y").to_s %>
+                <%= DateTime.strftime(b.expiration, "%d-%M-%Y").to_s %>
               </td>
               <td>
                 <%= b.status %>
