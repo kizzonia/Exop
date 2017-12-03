@@ -1,78 +1,67 @@
 <p id="notice"><%= notice %></p>
 
 <!-- PAGE HEADER -->
-      <section class="trd-page-breadcumb-header">
-          <div class="container">
-              <div class="row">
-                  <h1 class="trd-page-title">DashBoard</h1>
-                  <div class="trd-breadcumb-wrapper">
+<section class="trd-page-breadcumb-header">
+  <div class="container">
+    <div class="row">
+      <h1 class="trd-page-title">DashBoard</h1>
+      <div class="trd-breadcumb-wrapper">
 
-                      <% @balances.take(1).each do |b| %>
-                      <h3> Current Balance ( $ <%= b.balance %>)</h3>
-                      <% end %>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- PAGE HEADER END -->
+        <% @balances.take(1).each do |b| %>
+        <h3> Current Balance ( $ <%= b.balance %>)</h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PAGE HEADER END -->
 
-      <!-- PAGE CONTENTS -->
-      <section class="trd-page-contents-wrapper">
-          <div class="container">
-              <div class="row">
+<!-- PAGE CONTENTS -->
+<section class="trd-page-contents-wrapper">
+  <div class="container">
+    <div class="row">
 
-                  <!-- Sidebar -->
-                  <div class="trd-sidebar trd-sidebar-left col-md-3 col-sm-4 col-xs-12">
-                      <!-- Widget -->
-                      <div class="trd-sidebar-widget trd-pagelink-widget">
-                          <ul>
-                                <li> Account Updates/History  </li>
-                                <% @balances.take(1).each do |balance| %>
-                              <li>
-                             balance   $  <%= balance.balance %>
-                              </li>
-                              <% end %>
+      <!-- Sidebar -->
+      <div class="trd-sidebar trd-sidebar-left col-md-3 col-sm-4 col-xs-12">
+        <!-- Widget -->
+        <div class="trd-sidebar-widget trd-pagelink-widget">
+          <ul>
+            <li> Account Updates/History  </li>
+            <% @balances.take(1).each do |balance| %>
+            <li>
+              balance   $  <%= balance.balance %>
+            </li>
+            <% end %>
 
 
-                          </ul>
-                      </div>
-                      <!-- End -->
+          </ul>
+        </div>
+        <!-- End -->
 
-                      <!-- Widget -->
-                      <div class="trd-sidebar-widget trd-download-widget">
-                          <p>Download <br>Your <span class="trd-highlight-text">csv</span> from here</p>
-                          <a href="#" class="trd-btn">Download</a>
-                      </div>
-                      <!-- End -->
-                  </div>
-                  <!-- Sidebar End -->
+        <!-- Widget -->
+        <div class="trd-sidebar-widget trd-download-widget">
+          <p>Download <br>Your <span class="trd-highlight-text">csv</span> from here</p>
+          <a href="#" class="trd-btn">Download</a>
+        </div>
+        <!-- End -->
+      </div>
+      <!-- Sidebar End -->
 
-                  <!-- Page Contents -->
-                  <div class=" col-md-9 col-sm-8 col-xs-12">
-                      <div class="col-md-12 embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowtransparency="true" marginwidth="0" marginheight="0"  src="http://www.indianotes.com/widgets/sensex-nifty-charts/index.php?type=charts&w=900&h=600"></iframe>
+      <!-- Page Contents -->
+      <div class=" col-md-9 col-sm-8 col-xs-12">
+        <div class="col-md-12 embed-responsive embed-responsive-16by9">
+
+        </div>
+        <iframe class="embed-responsive-item" id="tradingview_2d40d" src="https://s.tradingview.com/widgetembed/?symbol=NASDAQ%3AAAPL&amp;interval=5&amp;hidesidetoolbar=0&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;details=1&amp;hotlist=1&amp;news=1&amp;studies=ACCD%40tv-basicstudies%1FstudyADR%40tv-basicstudies%1FAROON%40tv-basicstudies%1FATR%40tv-basicstudies&amp;newsvendors=headlines&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Etc%2FUTC&amp;withdateranges=1&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en&amp;utm_source=www.binaryoptions.net&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=NASDAQ%3AAAPL" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+
+
+
+      </div>
+    </div>
+
+
 
   </div>
-  <div class=" col-md-9 col-sm-8 col-xs-12">
-      <div class="col-md-12 embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowtransparency="true" marginwidth="0" marginheight="0"  src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=900&h=600"></iframe>
-
 </div>
-<div class=" col-md-9 col-sm-8 col-xs-12">
-    <div class="col-md-12 embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowtransparency="true" marginwidth="0" marginheight="0"  src="http://www.indianotes.com/widgets/currency-prices/index.php?type=all-currency-prices&w=600&h=700"></iframe>
-
-</div>
-
-
-
-
-              </div>
-                    </div>
-
-
-
-          </div>
-        </div>
-      </section>
-      <!-- PAGE CONTENTS END -->
+</section>
+<!-- PAGE CONTENTS END -->
