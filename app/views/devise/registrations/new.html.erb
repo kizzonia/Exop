@@ -1,9 +1,9 @@
-<div class="col-md-8 col-md-offset-2" style="margin-top:200px;">
+<div style="margin-top:200px;">
 <h2 class="text-center">Sign Up</h2>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-
+<div class="container">
     <div class="row">
       <div class="col-md-6">
     <%= f.input :name, label: "First Name", required: true, autofocus: true %>
@@ -278,9 +278,12 @@
 <% end %>
 
 
+
+
 </br>
 <h4> OR </h4>
 
 <%= render "devise/shared/links" %>
+</div>
 </div>
 </div>
