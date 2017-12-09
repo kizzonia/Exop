@@ -20,6 +20,7 @@ gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'carrierwave'
 gem 'friendly_id'
 gem 'sitemap_generator'
+gem "fog-aws"
 gem 'ckeditor', github: 'galetahub/ckeditor'
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
