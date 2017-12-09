@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :faqs
   resources :balances, except: [:show]
   get 'balances/history',  to: 'balances#history'
 namespace :balance do
