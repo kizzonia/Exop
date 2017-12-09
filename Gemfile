@@ -18,6 +18,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'carrierwave'
+gem "mini_magick"
 gem 'friendly_id'
 gem 'sitemap_generator'
 gem "fog-aws"
