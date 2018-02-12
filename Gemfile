@@ -41,7 +41,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 group :production do
-  gem 'pg'
+    gem 'pg', '~> 0.18'
   gem 'rails_12factor'
   gem 'mail_form'
 
