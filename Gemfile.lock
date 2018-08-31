@@ -279,7 +279,7 @@ DEPENDENCIES
   jquery-rails
   mail_form
   mini_magick
-  pg
+  pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.4)
   rails_12factor

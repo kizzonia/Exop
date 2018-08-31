@@ -11,7 +11,7 @@ form do |f|
  f.input :user_id, :label => 'Users', :as => :select, :collection => User.all.map{|u| ["#{u.email}, #{u.name}", u.id]}
       f.input :balance
       f.input :tradeId
-      f.input :currency, :as => :select, :collection => ['USD', 'GB', 'AUD/USD', 'AUD/GB']
+      f.input :currency, :as => :select, :collection => ['USD', 'GB', 'AUD/USD', 'AUD/GB', 'EUR/GBP', 'USD/JPY', 'AUD/CAD', 'USD/CHF', 'NZD/USD', 'GOLD', 'SILVER', 'BRENT OIL']
       f.input :deposit
       f.input :expiration
       f.input :status, as: :select, :collection => ["WON", "LOSE"]
