@@ -6,8 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 
-gem 'rails', '~> 5.0.4'
+ruby '~> 2.5.3'
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.2.2'
+#gem 'sqlite3'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -35,13 +39,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3'
+
   gem 'mail_form'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
 group :production do
-    gem 'pg', '~> 0.18'
+
   gem 'rails_12factor'
   gem 'mail_form'
 
