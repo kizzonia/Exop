@@ -1,67 +1,151 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
+    <div class="container-fluid">
+      <% if Deposit.where(user_id: current_user.id).exists?%>
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-success text-center">
+                                  <i class="ti-wallet"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Account Balance</p>
+                                <% @balances.take(1).each do |a| %>
 
-<!-- PAGE HEADER -->
-<section class="trd-page-breadcumb-header">
-  <div class="container">
-    <div class="row">
-      <h1 class="trd-page-title">DashBoard</h1>
-      <div class="trd-breadcumb-wrapper">
+                                  $<%= a.balance %>
+                                  <% end %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
 
-        <% @balances.take(1).each do |b| %>
-        <h3> Current Balance ( $ <%= b.balance %>)</h3>
-        <% end %>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-pulse"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Trades </p>
+                                  <%= Balance.where(user_id: current_user.id).count %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> <%= link_to "View Trade History", balances_history_path, class: "btn btn-warning" %>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-success text-center">
+                                  <i class="ti-credit-card"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Deposit</p>
+                                  <%= Deposit.where(user_id: current_user.id).count %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> <%= link_to "Make A Deposit", new_deposit_path, class: "btn btn-success" %>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-money"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Withdrawals</p>
+                                  <%= Withdraw.where(user_id: current_user.id).count %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> <%= link_to "Withraw Funds", new_withdraw_path, class: "btn btn-warning" %>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- PAGE HEADER END -->
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+              <div class="row">
+                <div class="col-md-12 embed-responsive embed-responsive-16by9">
 
-<!-- PAGE CONTENTS -->
-<section class="trd-page-contents-wrapper">
-  <div class="container">
-    <div class="row">
-
-      <!-- Sidebar -->
-      <div class="trd-sidebar trd-sidebar-left col-md-3 col-sm-4 col-xs-12">
-        <!-- Widget -->
-        <div class="trd-sidebar-widget trd-pagelink-widget">
-          <ul>
-            <li> Account Updates/History  </li>
-            <% @balances.take(1).each do |balance| %>
-            <li>
-              balance   $  <%= balance.balance %>
-            </li>
-            <% end %>
+                  <div style="width:100%; max-width:100% !important;" class="btcwdgt-chart"></div>
 
 
-          </ul>
-        </div>
-        <!-- End -->
+          </div>
+              </div>
 
-        <!-- Widget -->
-        <div class="trd-sidebar-widget trd-download-widget">
-          <p>Download <br>Your <span class="trd-highlight-text">csv</span> from here</p>
-          <a href="#" class="trd-btn">Download</a>
-        </div>
-        <!-- End -->
+            </div>
+          </div>
       </div>
-      <!-- Sidebar End -->
-
-      <!-- Page Contents -->
-      <div class=" col-md-9 col-sm-8 col-xs-12">
-        <div class="col-md-12 embed-responsive embed-responsive-16by9">
+     <% else %>
+     <div class="row" style="margin-top:50px;">
+       <div class="col-md-8 col-md-offset-2">
 
 
-        <iframe class="embed-responsive-item" id="tradingview_2d40d" src="https://s.tradingview.com/widgetembed/?symbol=NASDAQ%3AAAPL&amp;interval=5&amp;hidesidetoolbar=0&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;details=1&amp;hotlist=1&amp;news=1&amp;studies=ACCD%40tv-basicstudies%1FstudyADR%40tv-basicstudies%1FAROON%40tv-basicstudies%1FATR%40tv-basicstudies&amp;newsvendors=headlines&amp;hideideas=1&amp;theme=White&amp;style=1&amp;timezone=Etc%2FUTC&amp;withdateranges=1&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en&amp;utm_source=www.binaryoptions.net&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=NASDAQ%3AAAPL" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
-
-
-  </div>
-      </div>
-    </div>
-
-
-
-  </div>
+       <div class="card">
+         <div class="image">
+           <%= image_tag "home7-slider-img-1.jpg", class: "img-fluid" %>
+         </div>
+         <div class="content">
+           <div class="header text-center">
+               <h4 class="title">Start your making life easier</h4>
+               <br />
+             <%= link_to "Start by making a deposit", new_deposit_path, class: "btn btn-primary text-center"%>
 </div>
-</section>
-<!-- PAGE CONTENTS END -->
+         </div>
+
+       </div>
+     </div>
+      </div>
+<% end %>
+
+    </div>
+</div>

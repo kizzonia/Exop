@@ -34,21 +34,7 @@
                                       <i class="fa fa-twitter"></i>
                                   </a>
                               </li>
-                              <li class="trd-behance-icon">
-                                  <a href="#">
-                                      <i class="fa fa-behance"></i>
-                                  </a>
-                              </li>
-                              <li class="trd-dribbble-icon">
-                                  <a href="#">
-                                      <i class="fa fa-dribbble"></i>
-                                  </a>
-                              </li>
-                              <li class="trd-vimeo-icon">
-                                  <a href="#">
-                                      <i class="fa fa-vimeo"></i>
-                                  </a>
-                              </li>
+
                           </ul>
                       </div>
                       <!-- End -->
@@ -94,20 +80,11 @@
 
                                       </li>
 
-                                          <% if user_signed_in?  %>
-                                      <li>
-                                        <%= link_to "Account", balances_path %>
 
-                                      </li>
-                                      <li>
-                                        <%= link_to "Account history", balances_history_path%>
-
-                                      </li>
-                                      <% else %>
                                       <li>
                                         <%= link_to "Abouts", page_path("about") %>
                                       </li>
-                                      <% end %>
+
                                   </ul>
                               </li>
 
@@ -118,26 +95,7 @@
                                     <% end %>
                               </li>
 
-                              <% if user_signed_in?  %>
 
-                                                            <li class="trd-menu-right">
-                                                                <ul>
-
-                                                                    <li>
-                                                                      <%= link_to "Withdraw", new_balance_withdraw_path %>
-
-                                                                    </li>
-                                                                    <li>
-                                                                      <%= link_to "Deposit", new_balance_deposit_path %>
-
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <% else %>
 
                               <li class="trd-menu-right">
                                   <ul>
@@ -150,7 +108,7 @@
                                       </li>
                                   </ul>
                               </li>
-                               <% end %>
+
                           </ul>
                           <!-- End -->
                       </div>

@@ -1,6 +1,7 @@
 class Balance::DepositController < ApplicationController
+    layout "accounts"
   def new
-  @deposit = Deposit.new
+    @deposit = Deposit.new
   end
 
   def create

@@ -1,6 +1,7 @@
 class Balance::WithdrawController < ApplicationController
+  layout "accounts"
   def new
-  @withdraw = Withdraw.new
+    @withdraw = Withdraw.new
   end
 
   def create

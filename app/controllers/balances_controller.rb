@@ -1,5 +1,5 @@
 class BalancesController < InheritedResources::Base
-
+  layout "accounts"
   before_action :find_Balance, only: [  :edit, :update, :destroy]
   before_action :authenticate_user!
   def index

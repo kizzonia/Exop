@@ -1,0 +1,99 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Continue To Payment</h4>
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="title"> Hi <%= @deposit.email %> Please Complete Your Deposit By Paying</h4>
+              <p>
+                <strong>Amount:</strong>
+                <%= @deposit.amount %> for the slected plan. <strong>Plan:</strong>
+                <%= @deposit.plan %>
+
+
+
+              </p>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+    <div class="col-md-12 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-success text-center">
+                            <i class="ti-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Bitcoin</p>
+                            <pre> 1FHWFmG8RMPgaV6htt73XqPmFvP8RLV4hk</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-success text-center">
+                            <i class="ti-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Bitcoin Cash</p>
+                          <pre>qzwtp43ecx2lgl34yunvnvmsvmk7eu0l7qmqw3p7cv</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+  </div>
+    <div class="col-md-12 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-success text-center">
+                            <i class="ti-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Ether</p>
+                          <pre>0x6330b5c3740Bf5a9e383Fd848Cc069Fa42a9E0AD</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <p class="text-center"><%= link_to "Return To Dasboard", root_path, class: "btn btn-primary" %></p>
+      </div>
+      </div>
+  </div>
+</div>
